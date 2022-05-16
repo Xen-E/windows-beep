@@ -1,3 +1,18 @@
+/*************************************************************************************
+*  Copyright (c) 2022 Xen <xen-dev@pm.me>    https://github.com/Xen-E/windows-beep   *
+*  This source file is free software; you can redistribute it and/or modify it under *
+*  the terms of the GNU Lesser General Public License (LGPL) as published            *
+*  by the Free Software Foundation; either version 3 of the License, or              *
+*  (at your option) any later version.                                               *
+*  Windows Beep is distributed in the hope that it will be useful, but WITHOUT       *
+*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or             *
+*  FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public               *
+*  License for more details.                                                         *
+*  You should have received a copy of the GNU Lesser General Public License          *
+*  along with this program. If not, see <https://www.gnu.org/licenses>.              *
+*************************************************************************************/
+
+
 #include <iostream>
 #include <windows.h>
 
@@ -7,23 +22,30 @@ int main(int argc, char *argv[])
 {
 
 	if (argc < 2) {
-		cerr << "Provide an argument, example: test2\n";
+		cerr << "Provide an argument, example: \"test2\"\n";
 		return -1;
 	}
 	else if (argc > 2) {
-		cerr << "Too many arguments. just type one. Example: test1\n";
+		cerr << "Too many arguments. just type one. Example: \"test1\"\n";
 		return -1;
 	}
 	else {
 		if (strcmp(argv[1], "help") == 0) {
-			cout << "This program will play a set of songs to test your PC spearks that is located in your motherboard.\n";
-			cout << "If you're on Windows XP and lower it should work fine. Otherwise check this blog post:\n";
+			cout << "This program will play a set of songs to test your PC internal speaker which is located in your motherboard.\n";
+			cout << "If you're on Windows XP (not 64-bit edition) and lower it should work fine. Otherwise check this blog post:\n";
 			cout << "https://xen-e.github.io/2022/05/16/windows-beep.html\n\n";
-			cout << "Available tests:\n";
-			cout << "test1 -> The Imperial March\n";
-			cout << "test2 -> Mission Impossible\n";
-			cout << "test3 -> Super Mario\n\n";
-			cout << "<3 Xen<xen-dev@pm.me>";
+			cout << "\t\tAvailable tests:\n";
+			cout << "\t ----------------------------\n";
+			cout << "\t|  Arg  |        Song        |\n";
+			cout << "\t------------------------------\n";
+			cout << "\t| test1 | The Imperial March |\n";
+			cout << "\t| test2 | Mission Impossible |\n";
+			cout << "\t| test3 | Super Mario        |\n";
+			cout << "\t ----------------------------\n\n";
+
+			cout << "\t<3 Xen<xen-dev@pm.me>\n\n";
+
+			return 0;
 		}
 		else if (strcmp(argv[1], "test1") == 0) { //The Imperial March (Star Wars)
 			cout << "Playing \"The Imperial March\"...\n";
